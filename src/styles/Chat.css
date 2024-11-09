@@ -1,0 +1,68 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.chat-header {
+    background-color: #4CAF50;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.message-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.message-input {
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.send-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #45a049;
+}
+
+.message-list {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.message-item {
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-time-small {
+    margin-top: 5px;
+    font-size: 0.8rem;  /* Зменшуємо розмір шрифту */
+    color: gray;        /* Сірий колір для часу */
+    text-align: right;  /* Вирівнюємо по правому краю */
+    font-style: italic; /* Курсив для часу */
+}
+
+

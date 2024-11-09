@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Chat from './pages/Chat';
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import Modal from './components/Modal';
+import Userinfo from './pages/Userinfo';
 
 function App() {
+  const [isLogined, setLogined] = useState(false);
+  const [useremail,setUserEmail]=useState('');
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <h1 className="text-3xl font-bold underline bg-yellow-50">
+      Hello world!
+    </h1>
+      
+        <Routes>
+          {!isLogined ? (
+            <>
+              <Route path="/" element={<Login setLogined={setLogined} setUserEmail={setUserEmail}/>} />
+              <Route path="/register" element={<Register setLogined={setLogined} setUserEmail={setUserEmail} />} />
+              <Route path="/user/:id" element={<Userinfo  />} />
+              
+            </>
+          ) : (
+            <Route  path="/chat" element={<Chat useremail={useremail} />} />
+          )}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
